@@ -17,6 +17,26 @@ public class Point{
 		this.ny=ny;
 		this.nz=nz;
 	}
+	
+	public point(double x, double y, double z){
+		this.x=x;
+		this.y=y;
+		this.z=z;
+		r=1;
+		nx=0;
+		ny=0;
+		nz=0;
+	}
+
+	public point(double x, double y, double z, double r){
+		this.x=x;
+		this.y=y;
+		this.z=z;
+		this.r=r;
+		nx=0;
+		ny=0;
+		nz=0;
+	}
 
 	public void setX(double x){
 		this.x = x;
