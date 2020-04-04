@@ -67,7 +67,7 @@ public class Point{
 	}
 
 	public double getR(){
-		return R;
+		return r;
 	}
 
 	public void setNx(double nx){
