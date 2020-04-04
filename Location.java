@@ -4,7 +4,7 @@ public class Location{
 	private double lon;
 	private double alt;
 
-	public location(double lat, double lon, double alt){
+	public Location(double lat, double lon, double alt){
 		this.lat = lat;
 		this.lon = lon;
 		this.alt = alt;

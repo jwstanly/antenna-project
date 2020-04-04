@@ -8,7 +8,7 @@ public class Point{
 	private double ny;
 	private double nz;
 
-	public point(double x, double y, double z, double r, double nx, double ny, double nz){
+	public Point(double x, double y, double z, double r, double nx, double ny, double nz){
 		this.x=x;
 		this.y=y;
 		this.z=z;
@@ -18,7 +18,7 @@ public class Point{
 		this.nz=nz;
 	}
 	
-	public point(double x, double y, double z){
+	public Point(double x, double y, double z){
 		this.x=x;
 		this.y=y;
 		this.z=z;
@@ -28,7 +28,7 @@ public class Point{
 		nz=0;
 	}
 
-	public point(double x, double y, double z, double r){
+	public Point(double x, double y, double z, double r){
 		this.x=x;
 		this.y=y;
 		this.z=z;
