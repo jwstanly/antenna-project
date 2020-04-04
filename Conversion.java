@@ -51,6 +51,13 @@ public class Conversion{
 		return output;
 	}
 
+	public double distance(Point a, Point b){
+		double dx = a.getX() - b.getX();
+		double dy = a.getY() - b.getY();
+      		double dz = a.getZ() - b.getZ();
+        	return Math.sqrt(dx*dx + dy*dy + dz*dz);
+	}
+	
 	public point rotateGlobe(location b, location a, double bradius, double aradius) {
 
 		// Get modified coordinates of 'b' by rotating the globe so that 'a' is at lat=0, lon=0.
