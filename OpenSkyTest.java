@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class OpenSkyTest {
 	public static void main(String args[]) throws IOException {
-		OpenSkyApi api = new OpenSkyApi("GTUsers", "#!jsawk2020");
+		OpenSkyApi api = new OpenSkyApi(null, null);
 		
 		
 		//Lakeland: 28.01.40N, 82.01.47W
