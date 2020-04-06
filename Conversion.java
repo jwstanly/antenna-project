@@ -1,5 +1,10 @@
 public class Conversion{
 
+	enum Directions {
+		NORTH, SOUTH,
+		EAST, WEST
+	};
+
 	public double geocentricLatitude(double lat){
 		double e2 = 0.00669437999014;
 		double clat = Math.atan((1.0 - e2) * Math.tan(lat));
@@ -125,6 +130,14 @@ public class Conversion{
 			double altitude = 90.0 - (180.0 / Math.PI) * Math.acos(bma.getX() * ap.getNx() + bma.getY() * ap.getNy() + bma.getZ()*ap.getNz());
 			System.out.println("Altitude: " + altitude);
 		}
+	}
+	
+	public static double dmsToDecimal(int degree, int minute, int second, Directions dir) {
+		double rtn = degree + minute / 60. + second / 3600.;
+		if(dir == Directions.SOUTH || dir == Directions.WEST) {
+			rtn *= -1;
+		}
+		return rtn;
 	}
 
 	public static void main(String args[]) {
