@@ -11,7 +11,7 @@ import java.io.IOException;
 public class OpenSkyTest {
 	public static void main(String args[]) throws IOException {
 		
-		OpenSkyApi api = new OpenSkyApi("GTUsers", "#!jsawk2020");
+		OpenSkyApi api = new OpenSkyApi("/*user*/", "/*password*/");
 
 		Scanner kb = new Scanner(System.in);		
 		System.out.print("Min lat: ");
