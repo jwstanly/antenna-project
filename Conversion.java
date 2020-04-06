@@ -1,10 +1,5 @@
 public class Conversion{
 
-	enum Directions {
-		NORTH, SOUTH,
-		EAST, WEST
-	};
-
 	public double geocentricLatitude(double lat){
 		double e2 = 0.00669437999014;
 		double clat = Math.atan((1.0 - e2) * Math.tan(lat));
@@ -122,15 +117,20 @@ public class Conversion{
 			if(azimuth > 360) {
 				azimuth -= 360;
 			}
-			System.out.println("Azimuth: " + azimuth);
+			System.out.println("\t\tAzimuth: \t" + azimuth);
 		}
 
 		Point bma = normalizeVectorDiff(bp, ap);
 		if(bma != null) {
 			double altitude = 90.0 - (180.0 / Math.PI) * Math.acos(bma.getX() * ap.getNx() + bma.getY() * ap.getNy() + bma.getZ()*ap.getNz());
-			System.out.println("Altitude: " + altitude);
+			System.out.println("\t\tAltitude: \t" + altitude);
 		}
 	}
+
+	enum Directions {
+		NORTH, SOUTH,
+		EAST, WEST
+	};
 	
 	public static double dmsToDecimal(int degree, int minute, int second, Directions dir) {
 		double rtn = degree + minute / 60. + second / 3600.;
@@ -140,12 +140,15 @@ public class Conversion{
 		return rtn;
 	}
 
+
+
+	/*
 	public static void main(String args[]) {
 
 		Location l1 = new Location(50, 50, 0);
 		Location l2 = new Location(70, 70, 500);
 
 		(new Conversion()).calculate(l1, l2);
-	}
+	}//*/
 
 }
