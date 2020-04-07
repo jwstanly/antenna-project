@@ -1,12 +1,12 @@
 public class Conversion{
 
-	public double geocentricLatitude(double lat){
+	public static double geocentricLatitude(double lat){
 		double e2 = 0.00669437999014;
 		double clat = Math.atan((1.0 - e2) * Math.tan(lat));
 		return clat;
 	}
 
-	public double earthRadiusInMeters(double latitudeRadians){
+	public static double earthRadiusInMeters(double latitudeRadians){
 		double a = 6378137.0; // equatorial radius in meters
 		double b = 6356752.3; // polar radius in meters
 
@@ -20,7 +20,7 @@ public class Conversion{
 		return Math.sqrt((t1*t1 + t2*t2) / (t3*t3 + t4*t4));
 	}
 
-	public Point locationToPoint(Location input){
+	public static Point locationToPoint(Location input){
 		double lat = input.getLat() * Math.PI / 180.0;
 		double lon = input.getLon() * Math.PI / 180.0;
 		double radius = earthRadiusInMeters(lat);
@@ -51,7 +51,7 @@ public class Conversion{
 		return output;
 	}
 
-	public double distance(Point a, Point b){
+	public static double distance(Point a, Point b){
 		double dx = a.getX() - b.getX();
 		double dy = a.getY() - b.getY();
       		double dz = a.getZ() - b.getZ();
@@ -74,7 +74,7 @@ public class Conversion{
 		return Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1)) * 6371000;
 	}
 	
-	public Point rotateGlobe(Location b, Location a, double bradius, double aradius) {
+	public static Point rotateGlobe(Location b, Location a, double bradius, double aradius) {
 
 		// Get modified coordinates of 'b' by rotating the globe so that 'a' is at lat=0, lon=0.
 		Location br = new Location(b.getLat(), (b.getLon() - a.getLon()), b.getAlt() );
@@ -100,7 +100,7 @@ public class Conversion{
 			//JW: I recognize this is a shitty output... idk how to nicely encapsulate this data
 		return output;
 	}
-	public Point normalizeVectorDiff(Point b, Point a) {
+	public static Point normalizeVectorDiff(Point b, Point a) {
 
 		double dx = b.getX() - a.getX();
 		double dy = b.getY() - a.getY();
@@ -116,7 +116,7 @@ public class Conversion{
 
 	}
 
-	public void calculate(Location a, Location b) {
+	public static void calculate(Location a, Location b) {
 		Point ap = locationToPoint(a);
 		Point bp = locationToPoint(b);
 		double distKm = 1E-3 * distance(ap, bp);
@@ -143,7 +143,7 @@ public class Conversion{
 		}
 	}
 
-	enum Directions {
+	static enum Directions {
 		NORTH, SOUTH,
 		EAST, WEST
 	};
@@ -164,14 +164,6 @@ public class Conversion{
 	
 	public static double radiansToDegrees(double radians) {
 		return radians * 180 / Math.PI;
-	}
-
-	public static void main(String args[]) {
-
-		Location l1 = new Location(30.223704, -81.540371, 0);
-		Location l2 = new Location(30.089, -81.247, 500);
-
-		System.out.println(distanceOnGround(l1, l2) * 0.539957 / 1000);
 	}
 
 }
