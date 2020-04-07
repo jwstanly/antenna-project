@@ -58,6 +58,22 @@ public class Conversion{
         	return Math.sqrt(dx*dx + dy*dy + dz*dz);
 	}
 	
+	//Taken from https://github.com/wiseman/virtual-radar-server/blob/master/VirtualRadar.Interface/GreatCircleMaths.cs
+	//Method in that file is called Distance()
+	
+	public static double distanceOnGround(Location l1, Location l2) {
+		return distanceOnGround(l1.getLat(), l1.getLon(), l2.getLat(), l2.getLon());
+	}
+	
+	public static double distanceOnGround(double startLatitude, double startLongitude, double endLatitude, double endLongitude) {
+		double lat1 = degreesToRadians(startLatitude);
+		double lon1 = degreesToRadians(startLongitude);
+		double lat2 = degreesToRadians(endLatitude);
+		double lon2 = degreesToRadians(endLongitude);
+		
+		return Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1)) * 6371000;
+	}
+	
 	public Point rotateGlobe(Location b, Location a, double bradius, double aradius) {
 
 		// Get modified coordinates of 'b' by rotating the globe so that 'a' is at lat=0, lon=0.
@@ -140,15 +156,22 @@ public class Conversion{
 		return rtn;
 	}
 
+	public static double degreesToRadians(double degree) {
+		double rtn = Math.PI * degree / 180;
+		System.out.println(rtn);
+		return rtn;
+	}
+	
+	public static double radiansToDegrees(double radians) {
+		return radians * 180 / Math.PI;
+	}
 
-
-	/*
 	public static void main(String args[]) {
 
-		Location l1 = new Location(50, 50, 0);
-		Location l2 = new Location(70, 70, 500);
+		Location l1 = new Location(30.223704, -81.540371, 0);
+		Location l2 = new Location(30.089, -81.247, 500);
 
-		(new Conversion()).calculate(l1, l2);
-	}//*/
+		System.out.println(distanceOnGround(l1, l2) * 0.539957 / 1000);
+	}
 
 }
