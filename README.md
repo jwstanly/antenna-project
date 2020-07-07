@@ -28,7 +28,7 @@ Additionally, ```OpenSkyTest.java``` has an aggregate relationship with a ```Loc
 
 Each trajectory is a polar vector between the client and the aircraft. They can be used to orient any directional device towards the aircraft, such as a Yagi directional antenna or a satalite dish. More information about spherical coordinates can be found at https://en.wikipedia.org/wiki/Spherical_coordinate_system. 
 
-Aircraft are located using OpenSky's API. Anyone can use OpenSky's free API if you create an account on their website (https://opensky-network.org/). To implement an instance of their API, pass your username and password as constructor parameters to an ```OpenSkyApi``` object. 
+Aircraft are located using OpenSky's API. Anyone can use OpenSky's free API if you create an account on their website (https://opensky-network.org/). To implement an instance of their API, pass your username and password as constructor parameters to an ```OpenSkyApi``` object. As mentioned, the OpenSkyApi must run with the ```opensky.jar``` dependency at compile time.  
 
 The algorithm for trajectories (computing the polar vector between a pair of latitude, longitude, elevation coordinates) was taken directly from Don Cross, whose work was greatly appreciated. The source can be found at https://github.com/cosinekitty/geocalc, and a very informative article explaining his methodology can be found at https://medium.com/javascript-in-plain-english/calculating-azimuth-distance-and-altitude-from-a-pair-of-gps-locations-36b4325d8ab0.
 Because this project is in Java, this segment could be considered a port of his JavaScript code into Java.
