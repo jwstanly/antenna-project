@@ -1,5 +1,5 @@
 # antenna-project
-Java code for aiming Yagi antenna from latitude, longitude, and elevation. 
+Java code for aiming antenna at aircraft from latitude, longitude, and elevation. 
 
 The terminal based program searches for aircraft in a given latitude/longitude domain. It returns all found aircraft in the region, outputting various data points. To run the application, open the  ```OpenSkyTest.java``` and enter your OpenSky API credentials (more info below). Then compile the ```OpenSkyTest.java``` file with the classpath ```-cp``` flag in order to compile with the ```opensky.jar``` API dependency. When the application starts, clients will be prompted with the following inputs...
 
@@ -26,7 +26,7 @@ Additionally, ```OpenSkyTest.java``` has an aggregate relationship with a ```Loc
 * azimuth
 * altitude
 
-Since each trajectory is a polar vector between the client and the aircraft, they can be used to orient any directional device towards the aircraft, such as a directional ADS-B receiver, satalite dish. More information about spherical coordinates can be found [HERE](https://en.wikipedia.org/wiki/Spherical_coordinate_system). 
+Since each trajectory is a polar vector between the client and the aircraft, they can be used to orient any directional device towards the aircraft, such as a directional ADS-B receiver, Yagi antenna, or satalite dish. More information about spherical coordinates can be found [HERE](https://en.wikipedia.org/wiki/Spherical_coordinate_system). 
 
 Noticeably, the master branch also includes an HTTP Java server with HTML pages. Although this UI is not complete and the application should still be run through the Java main method found in ```OpenSkyTest.java```, we wanted to include this in master because this feature has potential for cloning/forking. 
 
