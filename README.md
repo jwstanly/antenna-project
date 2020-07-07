@@ -28,7 +28,7 @@ Additionally, ```OpenSkyTest.java``` has an aggregate relationship with a ```Loc
 
 Each trajectory is a polar vector between the client and the aircraft. They can be used to orient any directional device towards the aircraft, such as a directional ADS-B antenna or a satalite dish. More information about spherical coordinates can be found [HERE](https://en.wikipedia.org/wiki/Spherical_coordinate_system). 
 
-Noticably, the master branch also includes an HTTP Java server with HTML pages. Although this UI is not complete and the application should still be run through the Java main method found in ```OpenSkyTest.java```, we wanted to include this in master because this feature has potential for cloning/forking. 
+Noticeably, the master branch also includes an HTTP Java server with HTML pages. Although this UI is not complete and the application should still be run through the Java main method found in ```OpenSkyTest.java```, we wanted to include this in master because this feature has potential for cloning/forking. 
 
 Aircraft are located using OpenSky's API. OpenSky was devoloped to enable researchers to conduct experimental studies based on real data without the burden of paying for data from profit corporations and government entities. More information about the group can be found [in a paper published in 2014](https://ieeexplore.ieee.org/document/6846743) about the development and goals of OpenSky. Anyone can use OpenSky's free API if you create an account on their [website](https://opensky-network.org/). To implement an instance of their API, pass your username and password as constructor parameters to an ```OpenSkyApi``` object. As mentioned, the OpenSkyApi must run with the ```opensky.jar``` dependency at compile time.  
 
