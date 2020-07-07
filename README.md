@@ -11,7 +11,7 @@ The terminal based program searches for aircraft in a given latitude/longitude d
 After establishing the latitude/longitude domain, the console will print the total number of aircraft found. For each aircraft, the following live data points are printed...
 
 * callsign
-* ICA024
+* ICAO24
 * country of origin
 * latitude
 * longitude
