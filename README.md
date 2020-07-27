@@ -1,5 +1,5 @@
 # antenna-project
-Java code for aiming antenna at aircraft from latitude, longitude, and elevation. 
+Java code for aiming antenna at aircraft with spherical coordinates generated from latitude, longitude, and elevation. 
 
 The terminal based program searches for aircraft in a given latitude/longitude domain. It returns all found aircraft in the region, outputting various data points. To run the application, open the  ```OpenSkyTest.java``` and enter your OpenSky API credentials (more info below). Then compile the ```OpenSkyTest.java``` file with the classpath ```-cp``` flag in order to compile with the ```opensky.jar``` API dependency. When the application starts, clients will be prompted with the following inputs...
 
